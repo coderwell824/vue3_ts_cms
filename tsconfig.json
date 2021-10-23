@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {  //编译选项
+
+    "target": "esnext",   //目标代码 转换为(es6+语法) esnext  -> es6+语法
+
+    "module": "esnext",   //目标代码需要使用的模块方案
+
+    "strict": true,       //目标代码是否开启严格模式进行严格检测
+
+    "jsx": "preserve",    //对jsx进行怎么样的处理
+
+    "importHelpers": true,   //是否开启辅助导入功能
+
+    "moduleResolution": "node",  //按照node的方式去解析模块
+
+    "skipLibCheck": true,       //是否跳转一些库的检测
+
+    "esModuleInterop": true,    //es module 和commonjs是否可以混合使用
+    "allowSyntheticDefaultImports": true,
+
+    "sourceMap": true,   //是否生成映射文件
+
+    "baseUrl": ".",    //文件路径在解析时的基本url
+
+    "types": ["webpack-env"],  //指定具体要解析使用的类型
+
+    "paths": {                  //配置路径解析
+      "@/*": ["src/*"],
+      "components/*":["src/components/*"],
+    },
+
+    //指定在项目中可以使用哪些库的类型
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+
+  },
+
+  //哪些ts文件需要进行解析
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+, "src/store/module/main/stystem"  ],
+
+  //哪些ts文件不需要进行解析
+  "exclude": ["node_modules"]
+}
+
